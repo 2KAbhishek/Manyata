@@ -18,8 +18,8 @@ An OCR tool to recognize Hindi numerals.
 
 ## Objectives
 
-- [] To identify hand-written Hindi numerals using neural networks.
-- [] To identify the numerals in an autonomous way.
+-  To identify hand-written Hindi numerals using neural networks.
+-  To identify the numerals in an autonomous way.
 
 ## Target Audience
 
