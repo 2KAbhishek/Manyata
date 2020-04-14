@@ -7,7 +7,7 @@ An OCR tool to recognize Hindi numerals.
 ### Software
 
 * OS: Windows 7 or newer, Mac OS X 10.9 or newer, GNU/Linux, BSD and other Unix Systems.
-* Tools Used: GNU Octave, Git
+* Tools Used: Python, OpenCV, Tesseract
 
 ### Hardware
 
