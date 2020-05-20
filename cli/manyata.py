@@ -3,42 +3,27 @@ import cv2
 import numpy as np
 import pytesseract
 from pytesseract import Output
-from matplotlib import pyplot as plt
 
 IMG_DIR = '../images/'
 
-# get grayscale image
+# Grayscale
 def get_grayscale(image):
     return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-# noise removal
+# Noise Removal
 def remove_noise(image):
     return cv2.medianBlur(image,5)
 
-#thresholding
+# Thresholding
 def thresholding(image):
     return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
-#dilation
-def dilate(image):
-    kernel = np.ones((5,5),np.uint8)
-    return cv2.dilate(image, kernel, iterations = 1)
-
-#erosion
-def erode(image):
-    kernel = np.ones((5,5),np.uint8)
-    return cv2.erode(image, kernel, iterations = 1)
-
-#opening - erosion followed by dilation
+# Opening - Erosion + Dilation
 def opening(image):
     kernel = np.ones((5,5),np.uint8)
     return cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
 
-#canny edge detection
-def canny(image):
-    return cv2.Canny(image, 100, 200)
-
-#skew correction
+# Deskew
 def deskew(image):
     coords = np.column_stack(np.where(image > 0))
     angle = cv2.minAreaRect(coords)[-1]
@@ -52,19 +37,14 @@ def deskew(image):
     rotated = cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
     return rotated
 
-#template matching
-def match_template(image, template):
-    return cv2.matchTemplate(image, template, cv2.TM_CCOEFF_NORMED)
-
-# Original image
+# Example Image
 image = cv2.imread(IMG_DIR + 'example.jpg')
 b,g,r = cv2.split(image)
 rgb_img = cv2.merge([r,g,b])
 
-# Get angle and script
+# Fix Rotation
 #osd = pytesseract.image_to_osd(image)
 #angle = re.search('(?<=Rotate: )\d+', osd).group(0)
-#script = re.search('(?<=Script: )\w+', osd).group(0)
 
 #if angle == "90":
     #image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
@@ -83,7 +63,7 @@ images = {'gray': gray,
           'opening': opening
           }
 
-# Get OCR output using Pytesseract
+#Output using Pytesseract
 custom_config = r'-l hin'
 # custom_config = r'-l hin -c tessedit_char_whitelist=0123456789 --psm 6'
 print('Original Image')
