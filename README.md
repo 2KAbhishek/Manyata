@@ -1,5 +1,3 @@
-<div align="center">
-
 # Manyata
 
 ![Size](https://img.shields.io/github/repo-size/2kabhishek/Manyata?style=plastic&color=0f0&label=Size)
@@ -12,7 +10,6 @@
 
 An OCR tool to recognize Hindi numerals.
 
-</div>
 
 ## Specifications
 
@@ -37,5 +34,4 @@ An OCR tool to recognize Hindi numerals.
 
 Anyone trying to recognize hand-written Hindi numerals in an autonomous way.
 
-Please consider hitting the ⭐ star button if this repo was useful to you, any contributions and suggestions are welcome.
 
