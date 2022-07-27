@@ -1,6 +1,6 @@
 <div align = "center">
 
-<h1><a href="https://2kabhishek.github.io/Manyata">BareMinimum</a></h1>
+<h1><a href="https://2kabhishek.github.io/Manyata">Manyata</a></h1>
 
 <a href="https://github.com/2KAbhishek/Manyata/blob/main/LICENSE">
 <img alt="License" src="https://img.shields.io/github/license/2kabhishek/Manyata?style=flat&color=eee&label="> </a>
